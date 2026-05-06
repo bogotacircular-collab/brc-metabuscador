@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metabuscador — Bogotá Región Circular</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vd:#1a3a2a;--vm:#2d5a3d;--vl:#7dc242;--vlc:#a8d865;
+  --vbg:#eef5e8;--gt:#4a5a44;--gb:#d4e0cc;
+  --card-bg:rgba(255,255,255,.055);--card-border:rgba(255,255,255,.09);
+  --card-hover:rgba(255,255,255,.10);--glow-green:rgba(125,194,66,.18);
+  --dot-color:rgba(125,194,66,.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--vd);color:white;min-height:100vh;overflow-x:hidden;}
+
+/* SCENE BG */
+.scene{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.scene::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,var(--dot-color) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);}
+.scene::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 15% 20%,rgba(45,90,61,.55) 0%,transparent 70%),radial-gradient(ellipse 50% 60% at 85% 75%,rgba(26,58,42,.7) 0%,transparent 65%);}
+.arcs-svg{position:absolute;inset:0;width:100%;height:100%;}
+
+/* LAYOUT */
+.page-wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 40px 80px;}
+@media(max-width:768px){.page-wrap{padding:0 20px 60px;}}
+
+/* HEADER */
+.page-header{padding:52px 0 44px;position:relative;}
+.page-header::before{content:'';position:absolute;left:-40px;top:52px;bottom:44px;width:2px;background:linear-gradient(to bottom,transparent,var(--vl) 30%,var(--vl) 70%,transparent);opacity:.3;}
+.header-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.eyebrow-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(125,194,66,.12);border:1px solid rgba(125,194,66,.3);border-radius:20px;padding:4px 14px 4px 10px;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:var(--vl);letter-spacing:.1em;text-transform:uppercase;}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--vl);animation:pdot 2.4s ease-in-out infinite;}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.eyebrow-divider{width:24px;height:1px;background:rgba(255,255,255,.15);}
+.eyebrow-sub{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.04em;}
+.header-title{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;color:white;line-height:1.1;margin-bottom:14px;letter-spacing:-.02em;}
+.header-title em{color:var(--vl);font-style:normal;position:relative;}
+.header-title em::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:linear-gradient(to right,var(--vl),transparent);border-radius:2px;}
+.header-desc{font-size:15px;color:rgba(255,255,255,.5);line-height:1.75;max-width:560px;}
+
+/* STATS */
+.stats-strip{display:flex;gap:0;margin-top:32px;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.03);width:fit-content;}
+.stat-item{padding:14px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--vl);line-height:1;margin-bottom:3px;}
+.stat-label{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;}
+
+/* SEARCH */
+.search-zone{position:relative;margin-bottom:24px;}
+.search-zone::before{content:'';position:absolute;inset:-8px;background:radial-gradient(ellipse 80% 100% at 50% 50%,var(--glow-green),transparent 70%);border-radius:20px;pointer-events:none;opacity:0;transition:opacity .4s;}
+.search-zone:focus-within::before{opacity:1;}
+.search-bar{display:flex;align-items:center;background:rgba(255,255,255,.96);border-radius:14px;padding:6px 6px 6px 22px;gap:10px;box-shadow:0 2px 0 rgba(125,194,66,.4),0 12px 48px rgba(0,0,0,.35);border:1.5px solid rgba(255,255,255,.2);transition:box-shadow .3s;}
+.search-zone:focus-within .search-bar{box-shadow:0 2px 0 var(--vl),0 12px 48px rgba(0,0,0,.4),0 2px 12px rgba(125,194,66,.15);}
+.search-icon{color:#aaa;flex-shrink:0;transition:color .3s;}
+.search-zone:focus-within .search-icon{color:var(--vm);}
+.search-bar input{flex:1;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--vd);background:transparent;min-width:0;}
+.search-bar input::placeholder{color:#bbb;}
+.search-btn{flex-shrink:0;display:flex;align-items:center;gap:8px;background:var(--vd);color:var(--vl);font-family:'Syne',sans-serif;font-weight:800;font-size:12px;padding:12px 22px;border-radius:10px;border:none;cursor:pointer;letter-spacing:.05em;transition:background .2s,transform .15s;white-space:nowrap;}
+.search-btn:hover{background:var(--vm);transform:translateY(-1px);}
+.search-btn:active{transform:translateY(0);}
+
+/* SOURCES */
+.sources-strip{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.sources-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-right:4px;white-space:nowrap;}
+.source-pill{display:flex;align-items:center;gap:6px;padding:4px 12px 4px 8px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.6);transition:all .2s;cursor:default;}
+.source-pill:hover{background:rgba(125,194,66,.1);border-color:rgba(125,194,66,.3);color:rgba(255,255,255,.9);}
+.source-pip{width:6px;height:6px;border-radius:50%;background:var(--vl);flex-shrink:0;}
+
+/* FILTERS PANEL */
+.filters-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 20px;margin-bottom:28px;display:flex;flex-direction:column;gap:12px;}
+.filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.filter-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;min-width:44px;flex-shrink:0;}
+.filter-divider{width:100%;height:1px;background:rgba(255,255,255,.06);}
+.fp{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;white-space:nowrap;user-select:none;}
+.fp:hover{border-color:rgba(125,194,66,.5);color:white;background:rgba(125,194,66,.07);}
+.fp.active{background:var(--vl);border-color:var(--vl);color:var(--vd);font-weight:700;box-shadow:0 2px 12px rgba(125,194,66,.3);}
+.fp-icon{font-size:11px;}
+
+/* RESULTS HEADER */
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;min-height:24px;}
+.results-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.1em;}
+.results-count-badge{font-size:11px;color:rgba(255,255,255,.35);}
+
+/* GRID */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+@media(max-width:960px){.results-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.results-grid{grid-template-columns:1fr;}}
+
+/* CARD */
+.result-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:0;transition:transform .22s,box-shadow .22s,border-color .22s,background .22s;cursor:pointer;display:flex;flex-direction:column;overflow:hidden;position:relative;opacity:0;transform:translateY(14px);animation:card-in .4s ease forwards;}
+@keyframes card-in{to{opacity:1;transform:translateY(0);}}
+.result-card:hover{background:var(--card-hover);border-color:rgba(125,194,66,.45);transform:translateY(-3px);box-shadow:0 0 0 1px rgba(125,194,66,.15),0 12px 40px rgba(0,0,0,.3),0 4px 16px rgba(125,194,66,.1);}
+.card-accent{position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:0 2px 2px 0;background:var(--vl);opacity:0;transition:opacity .22s;}
+.result-card:hover .card-accent{opacity:1;}
+.card-orb{position:absolute;top:-20px;right:-20px;width:72px;height:72px;border-radius:50%;border:1px solid rgba(125,194,66,.12);pointer-events:none;}
+.card-orb::after{content:'';position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(125,194,66,.07);}
+.card-body{padding:18px 18px 0 20px;flex:1;display:flex;flex-direction:column;}
+.card-footer{padding:10px 18px 16px 20px;}
+.rc-source{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.rc-source-dot{width:5px;height:5px;border-radius:50%;background:var(--vl);flex-shrink:0;}
+.rc-source-name{font-size:10px;color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:.07em;font-weight:600;}
+.rc-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.rc-chip{font-size:10px;padding:2px 9px;border-radius:8px;font-weight:700;letter-spacing:.03em;}
+.rc-chip-tipo{background:rgba(125,194,66,.18);color:var(--vl);}
+.rc-chip-sec{background:rgba(255,255,255,.08);color:rgba(255,255,255,.65);}
+.rc-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:white;margin-bottom:5px;line-height:1.35;}
+.rc-actor{font-size:11px;color:var(--vl);font-weight:600;margin-bottom:10px;opacity:.85;}
+.rc-desc{font-size:12px;color:rgba(255,255,255,.48);line-height:1.6;margin-bottom:12px;flex:1;}
+.rc-meta-row{display:flex;gap:10px;font-size:10px;color:rgba(255,255,255,.28);padding-top:10px;border-top:1px solid rgba(255,255,255,.06);}
+.rc-btn{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border:1px solid rgba(125,194,66,.25);color:var(--vl);font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;border-radius:8px;cursor:pointer;transition:all .18s;background:transparent;width:100%;margin-top:10px;}
+.rc-btn:hover{background:var(--vl);color:var(--vd);border-color:var(--vl);}
+.rc-btn-arrow{font-size:14px;transition:transform .18s;}
+.rc-btn:hover .rc-btn-arrow{transform:translateX(3px);}
+
+/* STATES */
+.empty-state{grid-column:1/-1;text-align:center;padding:64px 20px;}
+.empty-circle{width:72px;height:72px;border-radius:50%;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:26px;position:relative;}
+.empty-circle::before{content:'';position:absolute;inset:6px;border-radius:50%;border:1px dashed rgba(255,255,255,.07);}
+.empty-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:rgba(255,255,255,.38);margin-bottom:6px;}
+.empty-desc{font-size:13px;color:rgba(255,255,255,.22);}
+.loading-state{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;padding:72px 20px;gap:16px;}
+.loading-arc{width:44px;height:44px;border-radius:50%;border:2.5px solid rgba(255,255,255,.06);border-top-color:var(--vl);animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-text{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.1em;}
+.error-state{grid-column:1/-1;background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);border-radius:12px;padding:36px 28px;text-align:center;}
+.error-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#e87070;margin-bottom:8px;}
+.error-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;}
+
+/* PAGINATION */
+.pagination-bar{display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap;gap:12px;}
+.pagination-info{font-size:12px;color:rgba(255,255,255,.3);}
+.pagination-nav{display:flex;gap:5px;align-items:center;}
+.pn-btn{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:rgba(255,255,255,.6);font-size:13px;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;}
+.pn-btn:hover:not(:disabled){background:rgba(125,194,66,.12);border-color:rgba(125,194,66,.4);color:var(--vl);}
+.pn-btn.active{background:var(--vl);border-color:var(--vl);color:var(--vd);font-weight:700;box-shadow:0 2px 10px rgba(125,194,66,.3);}
+.pn-btn:disabled{opacity:.2;cursor:not-allowed;}
+.pn-dots{color:rgba(255,255,255,.2);font-size:12px;padding:0 2px;align-self:center;}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(8,24,14,.85);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal{background:#0e2217;border:1px solid rgba(125,194,66,.2);border-radius:16px;max-width:660px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);animation:modal-in .25s ease;}
+@keyframes modal-in{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.modal-head{position:relative;padding:28px 32px 24px;border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden;}
+.modal-head::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(125,194,66,.1);pointer-events:none;}
+.modal-head::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(125,194,66,.07);pointer-events:none;}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;z-index:1;}
+.modal-close:hover{background:rgba(255,255,255,.12);color:white;border-color:rgba(255,255,255,.25);}
+.modal-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px;}
+.mchip{font-size:10px;padding:3px 10px;border-radius:8px;font-weight:700;letter-spacing:.04em;}
+.modal-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:white;line-height:1.25;margin-bottom:6px;padding-right:40px;}
+.modal-org{font-size:13px;color:var(--vl);font-weight:600;opacity:.85;}
+.modal-body{padding:24px 32px 28px;display:flex;flex-direction:column;gap:20px;}
+.modal-section-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:var(--vl);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(125,194,66,.2);display:flex;align-items:center;gap:6px;}
+.modal-section-label::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--vl);flex-shrink:0;}
+.modal-section p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.75;}
+.modal-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.modal-meta-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;}
+.modal-meta-key{font-size:10px;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;}
+.modal-meta-val{font-size:13px;color:rgba(255,255,255,.8);font-weight:500;}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;right:28px;background:var(--vm);color:white;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:14px 20px;border-radius:10px;border-left:3px solid var(--vl);z-index:2000;transform:translateY(80px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none;max-width:320px;box-shadow:0 8px 32px rgba(0,0,0,.4);}
+.toast.show{transform:translateY(0);opacity:1;}
+</style>
+</head>
+<body>
+
+<!-- FONDO DECORATIVO -->
+<div class="scene">
+  <svg class="arcs-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+    <circle cx="1320" cy="-80" r="380" stroke="rgba(125,194,66,0.06)" stroke-width="1.5"/>
+    <circle cx="1320" cy="-80" r="280" stroke="rgba(125,194,66,0.05)" stroke-width="1"/>
+    <circle cx="1320" cy="-80" r="180" stroke="rgba(125,194,66,0.08)" stroke-width="1"/>
+    <circle cx="80"   cy="980" r="420" stroke="rgba(125,194,66,0.05)" stroke-width="1.5"/>
+    <circle cx="80"   cy="980" r="300" stroke="rgba(125,194,66,0.04)" stroke-width="1"/>
+    <circle cx="720"  cy="450" r="560" stroke="rgba(125,194,66,0.025)" stroke-width="1"/>
+    <line x1="0"    y1="180" x2="400"  y2="0"   stroke="rgba(125,194,66,0.05)" stroke-width="1"/>
+    <line x1="1440" y1="720" x2="1100" y2="900" stroke="rgba(125,194,66,0.04)" stroke-width="1"/>
+    <circle cx="680" cy="60" r="2"   fill="rgba(125,194,66,0.25)"/>
+    <circle cx="700" cy="48" r="1.5" fill="rgba(125,194,66,0.15)"/>
+    <circle cx="720" cy="68" r="1"   fill="rgba(125,194,66,0.2)"/>
+    <circle cx="692" cy="80" r="1.5" fill="rgba(125,194,66,0.1)"/>
+  </svg>
+</div>
+
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="header-eyebrow">
+      <div class="eyebrow-badge">
+        <span class="eyebrow-dot"></span>
+        Metabuscador activo
+      </div>
+      <span class="eyebrow-divider"></span>
+      <span class="eyebrow-sub">Bogotá Región Circular · HÜB Digital</span>
+    </div>
+    <h1 class="header-title">Directorio de<br><em>Capacidades Circulares</em></h1>
+    <p class="header-desc">Encuentra bienes, servicios, tecnologías, capacidades I+D y fuentes de financiación para la economía circular en Bogotá y su región.</p>
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-num" id="statTotal">—</div><div class="stat-label">Capacidades</div></div>
+      <div class="stat-item"><div class="stat-num" id="statSources">—</div><div class="stat-label">Fuentes activas</div></div>
+      <div class="stat-item"><div class="stat-num" id="statUpdated">—</div><div class="stat-label">Actualizado</div></div>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="search-zone">
+    <div class="search-bar">
+      <svg class="search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none">
+        <circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2"/>
+        <path d="M17 17L21.5 21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="metaSearch" placeholder="Buscar por tecnología, actor, sector, estrategia…"
+             oninput="handleSearch()" onkeydown="if(event.key==='Enter')runSearch()"
+             autocomplete="off" spellcheck="false">
+      <button class="search-btn" onclick="runSearch()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2.2"/>
+          <path d="M17 17L21.5 21.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        Buscar
+      </button>
+    </div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources-strip" id="sourcesStrip">
+    <span class="sources-label">Fuentes:</span>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters-panel">
+    <div class="filter-row">
+      <span class="filter-label">Tipo</span>
+      <button class="fp active" data-mf="tipo" data-mv="all">Todos</button>
+      <button class="fp" data-mf="tipo" data-mv="bien"><span class="fp-icon">📦</span>Bien / Material</button>
+      <button class="fp" data-mf="tipo" data-mv="servicio"><span class="fp-icon">⚙️</span>Servicio</button>
+      <button class="fp" data-mf="tipo" data-mv="tecnologia"><span class="fp-icon">💡</span>Tecnología</button>
+      <button class="fp" data-mf="tipo" data-mv="capacidad"><span class="fp-icon">🔬</span>Capacidad I+D</button>
+      <button class="fp" data-mf="tipo" data-mv="financiacion"><span class="fp-icon">💰</span>Financiación</button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="filter-row">
+      <span class="filter-label">Sector</span>
+      <button class="fp active" data-mf="sector" data-mv="all">Todos</button>
+      <button class="fp" data-mf="sector" data-mv="agro"><span class="fp-icon">🌿</span>Agroalimentos</button>
+      <button class="fp" data-mf="sector" data-mv="construccion"><span class="fp-icon">🏗️</span>Construcción</button>
+      <button class="fp" data-mf="sector" data-mv="textil"><span class="fp-icon">🧵</span>Textil</button>
+      <button class="fp" data-mf="sector" data-mv="residuos"><span class="fp-icon">♻️</span>Residuos</button>
+      <button class="fp" data-mf="sector" data-mv="agua"><span class="fp-icon">💧</span>Agua</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-header">
+    <span class="results-label">Resultados</span>
+    <span class="results-count-badge" id="resultsCount"></span>
+  </div>
+
+  <div class="results-grid" id="metaResults">
+    <div class="loading-state">
+      <div class="loading-arc"></div>
+      <div class="loading-text">Cargando directorio…</div>
+    </div>
+  </div>
+
+  <div class="pagination-bar" id="paginationBar" style="display:none;">
+    <span class="pagination-info" id="paginationInfo"></span>
+    <div class="pagination-nav" id="paginationNav"></div>
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="resultModal">
+  <div class="modal">
+    <div class="modal-head">
+      <button class="modal-close" onclick="closeModal('resultModal')">✕</button>
+      <div class="modal-chips" id="modalChips"></div>
+      <div class="modal-title"  id="modalTitle"></div>
+      <div class="modal-org"    id="modalOrg"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const DATA_URL='./data.json',PAGE_SIZE=6;
+let allData=[],filteredData=[],activeTipo='all',activeSector='all',currentPage=1;
+const TL={bien:'Bien / Material',servicio:'Servicio',tecnologia:'Tecnología',capacidad:'Capacidad I+D',financiacion:'Financiación'};
+const SL={agro:'Agroalimentos',construccion:'Construcción',textil:'Textil',residuos:'Residuos',agua:'Agua'};
+const TI={bien:'📦',servicio:'⚙️',tecnologia:'💡',capacidad:'🔬',financiacion:'💰'};
+const SI={agro:'🌿',construccion:'🏗️',textil:'🧵',residuos:'♻️',agua:'💧'};
+const L=(m,k)=>m[k]||k;
+
+async function init(){
+  try{
+    const res=await fetch(DATA_URL);
+    if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    allData=await res.json();filteredData=[...allData];
+    updateStats(allData);buildSources(allData);renderResults(filteredData);
+  }catch(e){showError(e);}
+}
+
+function updateStats(d){
+  const src=new Set(d.map(r=>r.source));
+  document.getElementById('statTotal').textContent=d.length;
+  document.getElementById('statSources').textContent=src.size;
+  const dates=d.map(r=>r.scraped_at).filter(Boolean).sort();
+  if(dates.length){
+    const h=Math.round((new Date()-new Date(dates[dates.length-1]))/3.6e6);
+    document.getElementById('statUpdated').textContent=h<24?'Hoy':`Hace ${Math.round(h/24)}d`;
+  }else{document.getElementById('statUpdated').textContent='—';}
+}
+
+function buildSources(d){
+  const s=[...new Set(d.map(r=>r.source))];
+  document.getElementById('sourcesStrip').innerHTML=
+    '<span class="sources-label">Fuentes:</span>'+
+    s.map(x=>`<div class="source-pill"><span class="source-pip"></span>${escHtml(x)}</div>`).join('');
+}
+
+function renderResults(data){
+  const grid=document.getElementById('metaResults');
+  const countEl=document.getElementById('resultsCount');
+  const pagBar=document.getElementById('paginationBar');
+  const pagInfo=document.getElementById('paginationInfo');
+  const pagNav=document.getElementById('paginationNav');
+  if(!data.length){
+    grid.innerHTML=`<div class="empty-state"><div class="empty-circle">🔍</div><div class="empty-title">Sin resultados</div><div class="empty-desc">Prueba con otros términos o ajusta los filtros</div></div>`;
+    countEl.textContent='';pagBar.style.display='none';return;
+  }
+  const tp=Math.ceil(data.length/PAGE_SIZE);
+  if(currentPage>tp)currentPage=1;
+  const st=(currentPage-1)*PAGE_SIZE;
+  const sl=data.slice(st,st+PAGE_SIZE);
+  grid.innerHTML=sl.map((r,i)=>{
+    const rj=JSON.stringify(r).split('"').join('&quot;');
+    return `<div class="result-card" style="animation-delay:${i*55}ms" onclick="openModal(${rj})">
+      <span class="card-accent"></span><span class="card-orb"></span>
+      <div class="card-body">
+        <div class="rc-source"><span class="rc-source-dot"></span><span class="rc-source-name">${escHtml(r.source)}</span></div>
+        <div class="rc-chips"><span class="rc-chip rc-chip-tipo">${L(TL,r.tipo)}</span><span class="rc-chip rc-chip-sec">${L(SL,r.sector)}</span></div>
+        <div class="rc-title">${escHtml(r.title)}</div>
+        <div class="rc-actor">${escHtml(r.actor)}</div>
+        <div class="rc-desc">${escHtml(r.desc)}</div>
+        <div class="rc-meta-row"><span>📍 ${escHtml(r.loc||'—')}</span><span>📅 ${escHtml(String(r.año||'—'))}</span></div>
+      </div>
+      <div class="card-footer">
+        <button class="rc-btn" onclick="event.stopPropagation();openModal(${rj})">
+          <span>Ver ficha completa</span><span class="rc-btn-arrow">→</span>
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+  countEl.textContent=`${data.length} resultado${data.length!==1?'s':''}`;
+  pagInfo.textContent=`Mostrando ${st+1}–${Math.min(st+PAGE_SIZE,data.length)} de ${data.length}`;
+  buildPagination(tp,pagNav);
+  pagBar.style.display=tp>1?'flex':'none';
+}
+
+function buildPagination(total,nav){
+  if(total<=1){nav.innerHTML='';return;}
+  const p=currentPage;
+  let h=`<button class="pn-btn" onclick="goPage(${p-1})" ${p===1?'disabled':''}>‹</button>`;
+  for(let i=1;i<=total;i++){
+    if(i===1||i===total||(i>=p-1&&i<=p+1))h+=`<button class="pn-btn ${i===p?'active':''}" onclick="goPage(${i})">${i}</button>`;
+    else if(i===p-2||i===p+2)h+=`<span class="pn-dots">…</span>`;
+  }
+  h+=`<button class="pn-btn" onclick="goPage(${p+1})" ${p===total?'disabled':''}>›</button>`;
+  nav.innerHTML=h;
+}
+
+function goPage(n){const t=Math.ceil(filteredData.length/PAGE_SIZE);if(n<1||n>t)return;currentPage=n;renderResults(filteredData);window.scrollTo({top:0,behavior:'smooth'});}
+
+function applyFilters(){
+  const q=document.getElementById('metaSearch').value.toLowerCase().trim();
+  filteredData=allData.filter(r=>{
+    const tok=activeTipo==='all'||r.tipo===activeTipo;
+    const sok=activeSector==='all'||r.sector===activeSector;
+    const qok=!q||[r.title,r.desc,r.actor,r.estrategia,r.loc].some(f=>f&&f.toLowerCase().includes(q));
+    return tok&&sok&&qok;
+  });
+  currentPage=1;renderResults(filteredData);
+}
+function handleSearch(){applyFilters();}
+function runSearch(){applyFilters();}
+
+document.querySelectorAll('.fp').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const f=btn.dataset.mf;
+    document.querySelectorAll(`.fp[data-mf="${f}"]`).forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    if(f==='tipo')activeTipo=btn.dataset.mv;
+    if(f==='sector')activeSector=btn.dataset.mv;
+    applyFilters();
+  });
+});
+
+function openModal(r){
+  if(typeof r==='string')r=JSON.parse(r.split('&quot;').join('"'));
+  document.getElementById('modalTitle').textContent=r.title;
+  document.getElementById('modalOrg').textContent=r.actor;
+  document.getElementById('modalChips').innerHTML=
+    `<span class="mchip" style="background:rgba(125,194,66,.18);color:var(--vl);">${TI[r.tipo]||''} ${L(TL,r.tipo)}</span>
+     <span class="mchip" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);">${SI[r.sector]||''} ${L(SL,r.sector)}</span>
+     ${r.estrategia?`<span class="mchip" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.45);">♻️ ${escHtml(r.estrategia)}</span>`:''}`;
+  document.getElementById('modalBody').innerHTML=`
+    <div class="modal-section"><div class="modal-section-label">Descripción</div><p>${escHtml(r.desc)}</p></div>
+    <div class="modal-section"><div class="modal-section-label">Detalle técnico</div><p>${escHtml(r.detail||'No disponible')}</p></div>
+    <div class="modal-section">
+      <div class="modal-section-label">Datos de contexto</div>
+      <div class="modal-meta-grid">
+        <div class="modal-meta-item"><div class="modal-meta-key">📍 Ubicación</div><div class="modal-meta-val">${escHtml(r.loc||'—')}</div></div>
+        <div class="modal-meta-item"><div class="modal-meta-key">📅 En operación desde</div><div class="modal-meta-val">${escHtml(String(r.año||'—'))}</div></div>
+        <div class="modal-meta-item"><div class="modal-meta-key">♻️ Estrategia</div><div class="modal-meta-val">${escHtml(r.estrategia||'—')}</div></div>
+        <div class="modal-meta-item"><div class="modal-meta-key">🔗 Fuente</div><div class="modal-meta-val">${r.url&&/^https?:\/\//.test(r.url)?`<a href="${escAttr(r.url)}" target="_blank" rel="noopener" style="color:var(--vl);text-decoration:none;">${escHtml(r.source)} ↗</a>`:escHtml(r.source)}</div></div>
+      </div>
+    </div>`;
+  document.getElementById('resultModal').classList.add('open');
+}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)closeModal(o.id);}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>closeModal(m.id));});
+
+function escHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');}
+function escAttr(s){return s&&/^https?:\/\//.test(s)?s:'#';}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200);}
+function showError(e){document.getElementById('metaResults').innerHTML=`<div class="error-state"><div class="error-title">⚠️ No se pudo cargar el directorio</div><div class="error-desc">No se encontró <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:3px;font-size:11px;">data.json</code> en la ruta esperada.<br><small style="opacity:.5;">${e.message}</small></div></div>`;document.getElementById('paginationBar').style.display='none';}
+
+init();
+</script>
+</body>
+</html>
