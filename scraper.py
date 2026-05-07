@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-scraper.py - BRC Metabuscador v3
+scraper.py - BRC Metabuscador v4
 Fuentes:
-  1. BazzarBog CCB           - HTML estatico (PrestaShop)
-  2. Negocios Verdes Colombia - API SODA datos.gov.co (filtro CAR + Bogota)
-  3. ECMarketplace Latam      - Playwright (JS rendering)
-  4. Ecodirectorio SDA        - Playwright (Google Sites)
+  1. BazzarBog CCB             - HTML estatico (PrestaShop)
+  2. Negocios Verdes Nacional   - API SODA datos.gov.co (filtro CAR + Bogota)
+  3. Ecodirectorio SDA         - HTML estatico por categorias (135 empresas)
+  4. ECMarketplace Latam        - Playwright (JS rendering)
 """
 
 import json
@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 
 OUTPUT_FILE     = Path(__file__).parent / "data.json"
 LOG_FORMAT      = "%(asctime)s [%(levelname)s] %(message)s"
-REQUEST_TIMEOUT = 25
+REQUEST_TIMEOUT = 30
 TODAY           = datetime.now(timezone.utc).isoformat()
 
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
@@ -69,21 +69,23 @@ SECTOR_KW = {
     "agro": [
         "agro", "alimento", "organico", "compost", "biorresiduos",
         "agricola", "alimentario", "humus", "lombriz", "ganadero",
-        "cafe", "cacao", "hortalizas", "frutas", "verduras"
+        "cafe", "cacao", "hortalizas", "frutas", "verduras", "panela",
+        "apicultura", "miel"
     ],
     "textil": [
         "textil", "fibra", "ropa", "moda", "upcycling", "confeccion",
-        "tela", "hilo", "vestimenta", "cuero", "calzado"
+        "tela", "hilo", "vestimenta", "cuero", "calzado", "prendas",
+        "sostenible moda", "accesorios"
     ],
     "construccion": [
         "construccion", "demolicion", "rcd", "arido", "concreto",
         "cemento", "obra", "edificio", "infraestructura", "yeso",
-        "madera", "bambu"
+        "madera", "bambu", "construccion sostenible"
     ],
     "residuos": [
         "residuo", "reciclaje", "plastico", "papel", "carton",
         "electronico", "respel", "basura", "aprovechamiento",
-        "punto ecologico", "reciclado", "caneca"
+        "punto ecologico", "reciclado", "caneca", "envase", "empaque"
     ],
 }
 
@@ -94,7 +96,7 @@ ESTRATEGIA_KW = {
     ],
     "Extension vida util": [
         "reparacion", "reutilizacion", "segunda vida", "refabricacion",
-        "mantenimiento", "extension vida", "upcycling"
+        "mantenimiento", "extension vida", "upcycling", "transformacion"
     ],
     "Valorizacion y cierre": [
         "reciclaje", "valorizacion", "compostaje", "biogas", "pellet",
@@ -232,20 +234,11 @@ def _bazzarbog_detail(client, url):
 
 
 # FUENTE 2 - NEGOCIOS VERDES API SODA
-# Dataset: https://www.datos.gov.co/resource/v29b-znjj.json
-# Filtro: autoridad_ambiental_donde = CAR (Cundinamarca)
-#         O departamento_donde_se = Bogota (Distrito)
 
 def scrape_negocios_verdes_api(client):
     SOURCE   = "Negocios Verdes - CAR / Bogota"
     BASE_API = "https://www.datos.gov.co/resource/v29b-znjj.json"
     results  = []
-
-    # Campos reales confirmados del dataset:
-    # departamento_donde_se, municipio_donde_se_encuentra,
-    # autoridad_ambiental_donde, raz_n_social_del_negocio,
-    # descripci_n_del_negocio_verde, categor_a_del_negocio_verde,
-    # sector_al_cual_pertenece, producto_principal_que, a_o_a_o_de_registro
 
     params = {
         "$limit":  1000,
@@ -263,10 +256,10 @@ def scrape_negocios_verdes_api(client):
         res = client.get(BASE_API, params=params, timeout=REQUEST_TIMEOUT)
         res.raise_for_status()
         data = res.json()
-        log.info(f"[NegociosVerdes] {len(data)} registros recibidos del API")
+        log.info(f"[NegociosVerdes] {len(data)} registros recibidos")
 
         for item in data:
-            nombre    = (item.get("raz_n_social_del_negocio") or "Sin nombre").strip()
+            nombre    = (item.get("raz_n_social_del_negocio") or "").strip()
             desc_raw  = (item.get("descripci_n_del_negocio_verde") or "").strip()
             categoria = (item.get("categor_a_del_negocio_verde") or "").strip()
             sector    = (item.get("sector_al_cual_pertenece") or "").strip()
@@ -278,31 +271,23 @@ def scrape_negocios_verdes_api(client):
             anno      = (item.get("a_o_a_o_de_registro") or "").strip()
             rep       = (item.get("nombre_representante_del") or "").strip()
 
-            if not nombre or nombre == "Sin nombre":
+            if not nombre:
                 continue
 
-            loc = f"{municipio}, {dpto}".strip(", ") or "Bogota Region"
-
+            loc  = f"{municipio}, {dpto}".strip(", ") or "Bogota Region"
             desc = desc_raw[:240] if desc_raw else (
                 f"Negocio verde verificado por {autoridad}. "
                 f"Categoria: {categoria}. Producto: {producto}."
             )
-
             detail = (
-                f"{desc_raw} "
-                f"Sector: {sector}. Subsector: {subsector}. "
-                f"Producto principal: {producto}. "
-                f"Autoridad ambiental: {autoridad}. "
+                f"{desc_raw} Sector: {sector}. Subsector: {subsector}. "
+                f"Producto: {producto}. Autoridad: {autoridad}. "
                 f"Representante: {rep}."
             ).strip()
 
             results.append(make_record(
-                title=nombre,
-                actor=nombre,
-                source=SOURCE,
-                desc=desc,
-                detail=detail,
-                loc=loc,
+                title=nombre, actor=nombre, source=SOURCE,
+                desc=desc, detail=detail, loc=loc,
                 anno=anno or None,
                 url="https://www.negociosverdes.gov.co",
             ))
@@ -314,17 +299,181 @@ def scrape_negocios_verdes_api(client):
     return results
 
 
-# FUENTE 3 + 4 - ECMARKETPLACE y ECODIRECTORIO SDA (Playwright)
+# FUENTE 3 - ECODIRECTORIO SDA (HTML estatico por categorias)
+# 135 negocios verdes verificados por la SDA en 11 categorias
+# Estrategia: Playwright descubre las URLs de categorias,
+# luego httpx + BeautifulSoup raspa cada una.
 
-def scrape_con_playwright():
-    results_ecmarket = []
-    results_ecdir    = []
+# Categorias conocidas (hardcoded como fallback)
+ECODIR_CATEGORIAS_CONOCIDAS = [
+    "alimentos",
+    "moda-sostenible",
+    "aprovechamiento-de-residuos",
+    "agricultura-sostenible",
+    "tecnologias-limpias",
+    "construccion-sostenible",
+    "ecoturismo",
+    "servicios-ambientales",
+    "energia-renovable",
+    "biocomercio",
+    "envases-y-empaques",
+]
+
+ECODIR_BASE = (
+    "https://sites.google.com/ambientebogota.gov.co"
+    "/ecodirectorioempresarial"
+)
+
+
+def _ecodir_scrape_categoria(client, cat_url, source):
+    """Raspa una pagina de categoria del Ecodirectorio con BeautifulSoup."""
+    results = []
+    try:
+        res = client.get(cat_url, timeout=REQUEST_TIMEOUT)
+        if res.status_code != 200:
+            return results
+        soup = BeautifulSoup(res.text, "lxml")
+
+        # Google Sites renderiza el contenido en divs con role=main
+        # o en la clase .tyJCtd. El texto de cada empresa viene en parrafos.
+        main = (
+            soup.select_one("[role='main']")
+            or soup.select_one(".tyJCtd")
+            or soup.select_one("main")
+            or soup.body
+        )
+        if not main:
+            return results
+
+        # Cada empresa es un bloque de texto separado por <p> o <div>
+        # El patron es: NOMBRE EMPRESA - descripcion. Numero de contacto: X
+        raw_text = main.get_text(separator="\n", strip=True)
+        blocks   = re.split(r"\n{2,}", raw_text)
+
+        for block in blocks:
+            block = block.strip()
+            if len(block) < 20:
+                continue
+            # Ignorar navegacion y pie de pagina
+            if any(skip in block.lower() for skip in [
+                "search this site", "skip to", "report abuse",
+                "page details", "www.ambientebogota"
+            ]):
+                continue
+
+            # Primera linea suele ser el nombre de la empresa
+            lines      = [l.strip() for l in block.split("\n") if l.strip()]
+            title_line = lines[0] if lines else block[:80]
+            desc_text  = " ".join(lines[1:])[:240] if len(lines) > 1 else block[:240]
+
+            # Limpiar el titulo: quitar "NOMBRE - Producto" si viene junto
+            title_parts = re.split(r"\s*[-–]\s*", title_line, maxsplit=1)
+            title       = title_parts[0].strip()[:120]
+            if len(title_parts) > 1 and not desc_text:
+                desc_text = title_parts[1].strip()[:240]
+
+            if len(title) < 4:
+                continue
+
+            results.append(make_record(
+                title=title,
+                actor=title,
+                source=source,
+                desc=desc_text or title,
+                detail=block[:600],
+                url=cat_url,
+            ))
+
+    except Exception as e:
+        log.debug(f"[Ecodirectorio] Error en {cat_url}: {e}")
+
+    return results
+
+
+def scrape_ecodirectorio_sda(client):
+    """
+    Raspa el Ecodirectorio SDA - Negocios Verdes.
+    Paso 1: intentar descubrir categorias via Playwright.
+    Paso 2: si Playwright no disponible, usar lista hardcoded.
+    Paso 3: raspar cada categoria con httpx + BeautifulSoup.
+    """
+    SOURCE   = "Ecodirectorio SDA"
+    BASE_NV  = f"{ECODIR_BASE}/negocios-verdes"
+    results  = []
+
+    # Intentar descubrir categorias con Playwright
+    cat_urls = _ecodir_discover_categories(BASE_NV)
+
+    # Fallback: usar categorias conocidas
+    if not cat_urls:
+        log.info("[Ecodirectorio SDA] Usando categorias hardcoded")
+        cat_urls = [
+            f"{BASE_NV}/{cat}"
+            for cat in ECODIR_CATEGORIAS_CONOCIDAS
+        ]
+
+    log.info(f"[Ecodirectorio SDA] {len(cat_urls)} categorias a raspar")
+
+    for cat_url in cat_urls:
+        log.info(f"[Ecodirectorio SDA] Raspando: {cat_url}")
+        cat_results = _ecodir_scrape_categoria(client, cat_url, SOURCE)
+        log.info(f"[Ecodirectorio SDA] {len(cat_results)} empresas en {cat_url.split('/')[-1]}")
+        results.extend(cat_results)
+
+    log.info(f"[Ecodirectorio SDA] {len(results)} registros totales")
+    return results
+
+
+def _ecodir_discover_categories(index_url):
+    """
+    Usa Playwright para cargar la pagina indice y extraer
+    las URLs de las categorias del menu de navegacion.
+    """
+    cat_urls = []
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=True,
+                args=["--no-sandbox", "--disable-dev-shm-usage"]
+            )
+            page = browser.new_page()
+            page.goto(index_url, wait_until="networkidle", timeout=40000)
+            page.wait_for_timeout(3000)
+
+            # Extraer todos los links del mismo sitio
+            all_links = page.eval_on_selector_all(
+                "a[href]", "els => els.map(e => e.href)"
+            )
+            cat_urls = list({
+                link for link in all_links
+                if "ecodirectorioempresarial/negocios-verdes/" in link
+                and link.rstrip("/") != index_url.rstrip("/")
+                and "?" not in link
+            })
+            browser.close()
+            log.info(
+                f"[Ecodirectorio SDA] Playwright encontro "
+                f"{len(cat_urls)} categorias"
+            )
+    except Exception as e:
+        log.warning(f"[Ecodirectorio SDA] Playwright no disponible: {e}")
+
+    return cat_urls
+
+
+# FUENTE 4 - ECMARKETPLACE (Playwright)
+
+def scrape_ecmarketplace():
+    SOURCE  = "ECMarketplace Latam"
+    BASE_EC = "https://ecmarketplacelatam.com"
+    results = []
 
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        log.warning("[Playwright] No instalado. Skipping.")
-        return [], []
+        log.warning("[ECMarketplace] Playwright no instalado. Skipping.")
+        return []
 
     try:
         with sync_playwright() as p:
@@ -332,168 +481,66 @@ def scrape_con_playwright():
                 headless=True,
                 args=["--no-sandbox", "--disable-dev-shm-usage"]
             )
-
-            # ECMarketplace
-            SOURCE_EC = "ECMarketplace Latam"
-            BASE_EC   = "https://ecmarketplacelatam.com"
-            try:
-                log.info("[ECMarketplace] Cargando con Playwright...")
-                page = browser.new_page()
-                page.goto(
-                    f"{BASE_EC}/Buscador",
-                    wait_until="networkidle",
-                    timeout=45000
-                )
-                page.wait_for_timeout(4000)
-
-                try:
-                    page.click(
-                        "button:has-text('Buscar'), input[value='Buscar']",
-                        timeout=3000
-                    )
-                    page.wait_for_timeout(3000)
-                except Exception:
-                    pass
-
-                cards = page.query_selector_all(
-                    ".card, .producto-card, .item-producto, "
-                    "[class*='producto'], [class*='oferta'], [class*='card']"
-                )
-                log.info(f"[ECMarketplace] {len(cards)} tarjetas encontradas")
-
-                seen = set()
-                for card in cards[:100]:
-                    try:
-                        title_el = card.query_selector(
-                            "h2, h3, h4, .titulo, .nombre, strong"
-                        )
-                        desc_el  = card.query_selector(
-                            "p, .descripcion, .description"
-                        )
-                        link_el  = card.query_selector("a[href]")
-
-                        title_text = title_el.inner_text().strip() if title_el else ""
-                        if not title_text or title_text in seen:
-                            continue
-                        seen.add(title_text)
-
-                        desc_text = (
-                            desc_el.inner_text().strip() if desc_el else ""
-                        )
-                        href = link_el.get_attribute("href") if link_el else ""
-                        if href and not href.startswith("http"):
-                            href = BASE_EC + href
-
-                        results_ecmarket.append(make_record(
-                            title=title_text,
-                            actor=title_text,
-                            source=SOURCE_EC,
-                            desc=desc_text,
-                            url=href,
-                        ))
-                    except Exception:
-                        continue
-
-                if not results_ecmarket:
-                    html = page.content()
-                    soup = BeautifulSoup(html, "lxml")
-                    for el in soup.select("h3, h4"):
-                        text = el.get_text(strip=True)
-                        if len(text) > 8:
-                            results_ecmarket.append(make_record(
-                                title=text, actor=text,
-                                source=SOURCE_EC, desc="",
-                                url=f"{BASE_EC}/Buscador",
-                            ))
-
-                page.close()
-                log.info(f"[ECMarketplace] {len(results_ecmarket)} registros")
-
-            except Exception as e:
-                log.error(f"[ECMarketplace] Error: {e}")
-
-            # Ecodirectorio SDA
-            SOURCE_SDA = "Ecodirectorio SDA"
-            URL_SDA = (
-                "https://sites.google.com/ambientebogota.gov.co"
-                "/ecodirectorio-2023/inicio"
+            page = browser.new_page()
+            log.info("[ECMarketplace] Cargando con Playwright...")
+            page.goto(
+                f"{BASE_EC}/Buscador",
+                wait_until="networkidle",
+                timeout=45000
             )
+            page.wait_for_timeout(4000)
+
             try:
-                log.info("[Ecodirectorio SDA] Cargando con Playwright...")
-                page = browser.new_page()
-                page.goto(URL_SDA, wait_until="networkidle", timeout=45000)
-                page.wait_for_timeout(4000)
-
-                all_links = page.eval_on_selector_all(
-                    "a[href]",
-                    "els => els.map(e => e.href)"
+                page.click(
+                    "button:has-text('Buscar'), input[value='Buscar']",
+                    timeout=3000
                 )
+                page.wait_for_timeout(3000)
+            except Exception:
+                pass
 
-                company_urls = list({
-                    link for link in all_links
-                    if "ecodirectorio-2023" in link
-                    and "inicio" not in link
-                    and link.startswith("https://sites.google.com")
-                })[:35]
+            cards = page.query_selector_all(
+                ".card, .producto-card, .item-producto, "
+                "[class*='producto'], [class*='oferta'], [class*='card']"
+            )
+            log.info(f"[ECMarketplace] {len(cards)} tarjetas encontradas")
 
-                log.info(
-                    f"[Ecodirectorio SDA] {len(company_urls)} perfiles encontrados"
-                )
-
-                for company_url in company_urls:
-                    try:
-                        page.goto(
-                            company_url,
-                            wait_until="domcontentloaded",
-                            timeout=20000
-                        )
-                        page.wait_for_timeout(2000)
-
-                        title = page.title()
-                        title = re.sub(
-                            r"\s*[-|]\s*(Ecodirectorio|ecodirectorio).*$",
-                            "", title
-                        ).strip()
-
-                        body_text = ""
-                        for selector in [
-                            "[role='main']", ".tyJCtd", "article", "main"
-                        ]:
-                            try:
-                                body_text = page.inner_text(selector)
-                                if body_text.strip():
-                                    break
-                            except Exception:
-                                continue
-
-                        body_clean = " ".join(body_text.split())[:600]
-
-                        if title and len(title) > 3:
-                            results_ecdir.append(make_record(
-                                title=title,
-                                actor=title,
-                                source=SOURCE_SDA,
-                                desc=body_clean[:240],
-                                detail=body_clean,
-                                url=company_url,
-                            ))
-                    except Exception as e:
-                        log.debug(
-                            f"[Ecodirectorio SDA] Error en {company_url}: {e}"
-                        )
-
-                page.close()
-                log.info(f"[Ecodirectorio SDA] {len(results_ecdir)} registros")
-
-            except Exception as e:
-                log.error(f"[Ecodirectorio SDA] Error: {e}")
+            seen = set()
+            for card in cards[:100]:
+                try:
+                    title_el = card.query_selector(
+                        "h2, h3, h4, .titulo, .nombre, strong"
+                    )
+                    desc_el  = card.query_selector(
+                        "p, .descripcion, .description"
+                    )
+                    link_el  = card.query_selector("a[href]")
+                    title_text = (
+                        title_el.inner_text().strip() if title_el else ""
+                    )
+                    if not title_text or title_text in seen:
+                        continue
+                    seen.add(title_text)
+                    desc_text = (
+                        desc_el.inner_text().strip() if desc_el else ""
+                    )
+                    href = link_el.get_attribute("href") if link_el else ""
+                    if href and not href.startswith("http"):
+                        href = BASE_EC + href
+                    results.append(make_record(
+                        title=title_text, actor=title_text,
+                        source=SOURCE, desc=desc_text, url=href,
+                    ))
+                except Exception:
+                    continue
 
             browser.close()
+            log.info(f"[ECMarketplace] {len(results)} registros")
 
     except Exception as e:
-        log.error(f"[Playwright] Error general: {e}")
+        log.error(f"[ECMarketplace] Error: {e}")
 
-    return results_ecmarket, results_ecdir
+    return results
 
 
 # POST-PROCESAMIENTO
@@ -530,7 +577,7 @@ def deduplicate(records):
 
 def main():
     log.info("=" * 55)
-    log.info("BRC Metabuscador v3 - Inicio de scraping")
+    log.info("BRC Metabuscador v4 - Inicio de scraping")
     log.info(f"Hora UTC: {TODAY}")
     log.info("=" * 55)
 
@@ -539,10 +586,9 @@ def main():
     with httpx.Client(headers=HEADERS, follow_redirects=True) as client:
         all_records += scrape_bazzarbog(client)
         all_records += scrape_negocios_verdes_api(client)
+        all_records += scrape_ecodirectorio_sda(client)
 
-    results_ec, results_sda = scrape_con_playwright()
-    all_records += results_ec
-    all_records += results_sda
+    all_records += scrape_ecmarketplace()
 
     all_records = validate(all_records)
     all_records = deduplicate(all_records)
