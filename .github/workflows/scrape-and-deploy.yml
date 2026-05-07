@@ -1,98 +1,65 @@
-# .github/workflows/scrape-and-deploy.yml
-#
-# BRC Metabuscador â€” GitHub Actions Workflow
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-# Ejecuta el scraper diariamente a las 5:00 AM UTC (medianoche Colombia),
-# commitea el data.json actualizado y GitHub Pages se redespliega solo.
-#
-# SETUP INICIAL (una sola vez):
-#   1. En tu repo GitHub: Settings â†’ Pages â†’ Source: "Deploy from branch: main / root"
-#   2. AsegÃºrate de que el repo tiene permiso de escritura para Actions:
-#      Settings â†’ Actions â†’ General â†’ Workflow permissions â†’ "Read and write permissions"
-
 name: Scrape & Update Data
 
 on:
-  # â”€â”€â”€ EjecuciÃ³n automÃ¡tica diaria â”€â”€â”€
   schedule:
-    - cron: "0 5 * * *"   # 05:00 UTC = 00:00 Colombia (UTC-5)
-  
-  # â”€â”€â”€ Permite ejecutar manualmente desde la UI de GitHub â”€â”€â”€
-  workflow_dispatch:
-    inputs:
-      debug:
-        description: "Activar logs detallados"
-        required: false
-        default: "false"
+    - cron: "0 5 * * *"   # 05:00 UTC = medianoche Colombia (UTC-5)
+  workflow_dispatch:       # Ejecutar manualmente desde GitHub
 
 jobs:
   scrape:
     name: Scrape sources & update data.json
     runs-on: ubuntu-latest
-    
-    # Permisos necesarios para commitear al repo
     permissions:
       contents: write
-    
+
     steps:
-      # â”€â”€â”€ 1. Checkout del cÃ³digo â”€â”€â”€
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Traer historial completo para que el commit funcione bien
           fetch-depth: 0
-      
-      # â”€â”€â”€ 2. Configurar Python â”€â”€â”€
+
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
-      
-      # â”€â”€â”€ 3. Instalar dependencias â”€â”€â”€
-      - name: Install dependencies
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      
-      # â”€â”€â”€ 4. Ejecutar el scraper â”€â”€â”€
-      - name: Run scraper
+
+      - name: Install Playwright browsers
         run: |
-          python scraper.py
-        env:
-          # Si alguna fuente requiere API key, agrÃ©gala como GitHub Secret:
-          # DATOS_ABIERTOS_TOKEN: ${{ secrets.DATOS_ABIERTOS_TOKEN }}
-          PYTHONPATH: "."
-          LOG_LEVEL: ${{ github.event.inputs.debug == 'true' && 'DEBUG' || 'INFO' }}
-      
-      # â”€â”€â”€ 5. Verificar que data.json se generÃ³ correctamente â”€â”€â”€
+          playwright install chromium --with-deps
+
+      - name: Run scraper
+        run: python scraper.py
+
       - name: Validate data.json
         run: |
           python -c "
           import json, sys
-          with open('data.json', 'r', encoding='utf-8') as f:
+          with open('data.json', encoding='utf-8') as f:
               data = json.load(f)
-          print(f'âœ“ data.json vÃ¡lido: {len(data)} registros')
+          print(f'âœ“ {len(data)} registros vÃ¡lidos')
           if len(data) == 0:
-              print('âš ï¸  ADVERTENCIA: data.json estÃ¡ vacÃ­o')
+              print('ERROR: data.json vacÃ­o')
               sys.exit(1)
           "
-      
-      # â”€â”€â”€ 6. Commitear data.json si hubo cambios â”€â”€â”€
+
       - name: Commit updated data.json
         run: |
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
           git add data.json
-          
-          # Solo commitear si hay cambios reales
           if git diff --staged --quiet; then
-            echo "â„¹ï¸  Sin cambios en data.json â€” nada que commitear"
+            echo "Sin cambios en data.json"
           else
-            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
-            RECORD_COUNT=$(python -c "import json; d=json.load(open('data.json')); print(len(d))")
-            git commit -m "data: actualizaciÃ³n automÃ¡tica ${TIMESTAMP} (${RECORD_COUNT} registros)"
+            COUNT=$(python -c "import json; print(len(json.load(open('data.json'))))")
+            DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "data: ${DATE} â€” ${COUNT} registros"
             git push
-            echo "âœ“ data.json actualizado y pusheado"
+            echo "âœ“ data.json actualizado"
           fi
+
