@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-scraper.py - BRC Metabuscador v2
-Cambios vs v1:
-  - HEMA reemplazada por API SODA datos.gov.co (Negocios Verdes)
-  - Negocios Verdes CAR reemplazada por misma API SODA
-  - ECMarketplace ahora usa Playwright (JS rendering)
-  - Ecodirectorio SDA con selectores corregidos
+scraper.py - BRC Metabuscador v3
+Fuentes:
+  1. BazzarBog CCB           - HTML estatico (PrestaShop)
+  2. Negocios Verdes Colombia - API SODA datos.gov.co (filtro CAR + Bogota)
+  3. ECMarketplace Latam      - Playwright (JS rendering)
+  4. Ecodirectorio SDA        - Playwright (Google Sites)
 """
 
 import json
@@ -145,7 +145,7 @@ def make_record(title, actor, source, desc,
     }
 
 
-# FUENTE 1 - BAZZARBOG (sin cambios, ya funciona)
+# FUENTE 1 - BAZZARBOG
 
 BAZZARBOG_KEYWORDS = [
     "reciclado", "sostenible", "ecologico", "organico",
@@ -231,63 +231,90 @@ def _bazzarbog_detail(client, url):
     return ""
 
 
-# FUENTE 2 - NEGOCIOS VERDES (API SODA datos.gov.co)
-# Dataset oficial: https://www.datos.gov.co/resource/v29b-znjj.json
-# Filtramos por Bogota y Cundinamarca
+# FUENTE 2 - NEGOCIOS VERDES API SODA
+# Dataset: https://www.datos.gov.co/resource/v29b-znjj.json
+# Filtro: autoridad_ambiental_donde = CAR (Cundinamarca)
+#         O departamento_donde_se = Bogota (Distrito)
 
 def scrape_negocios_verdes_api(client):
-    SOURCE   = "Negocios Verdes Colombia"
+    SOURCE   = "Negocios Verdes - CAR / Bogota"
     BASE_API = "https://www.datos.gov.co/resource/v29b-znjj.json"
     results  = []
 
+    # Campos reales confirmados del dataset:
+    # departamento_donde_se, municipio_donde_se_encuentra,
+    # autoridad_ambiental_donde, raz_n_social_del_negocio,
+    # descripci_n_del_negocio_verde, categor_a_del_negocio_verde,
+    # sector_al_cual_pertenece, producto_principal_que, a_o_a_o_de_registro
+
     params = {
-        "$limit": 500,
+        "$limit":  1000,
         "$offset": 0,
-        "$order": "nombre_negocio ASC",
+        "$order":  "raz_n_social_del_negocio ASC",
+        "$where": (
+            "autoridad_ambiental_donde = 'CAR' "
+            "OR departamento_donde_se = 'Bogota' "
+            "OR departamento_donde_se = 'Cundinamarca'"
+        ),
     }
 
     try:
-        log.info("[NegociosVerdes API] Consultando datos.gov.co SODA API")
+        log.info("[NegociosVerdes] Consultando API SODA datos.gov.co...")
         res = client.get(BASE_API, params=params, timeout=REQUEST_TIMEOUT)
         res.raise_for_status()
         data = res.json()
-        log.info(f"[NegociosVerdes API] {len(data)} registros recibidos")
+        log.info(f"[NegociosVerdes] {len(data)} registros recibidos del API")
 
         for item in data:
-            nombre     = item.get("nombre_negocio") or item.get("nombre") or "Sin nombre"
-            desc_raw   = (item.get("descripcion") or item.get("actividad_principal")
-                          or item.get("bien_servicio") or "")
-            dpto       = item.get("departamento") or item.get("dpto") or ""
-            municipio  = item.get("municipio") or item.get("ciudad") or ""
-            categoria  = item.get("categoria") or item.get("tipo_negocio") or ""
-            contacto   = item.get("correo") or item.get("email") or ""
-            loc        = f"{municipio}, {dpto}".strip(", ") or "Colombia"
+            nombre    = (item.get("raz_n_social_del_negocio") or "Sin nombre").strip()
+            desc_raw  = (item.get("descripci_n_del_negocio_verde") or "").strip()
+            categoria = (item.get("categor_a_del_negocio_verde") or "").strip()
+            sector    = (item.get("sector_al_cual_pertenece") or "").strip()
+            subsector = (item.get("subsector_al_cual_pertenece") or "").strip()
+            producto  = (item.get("producto_principal_que") or "").strip()
+            municipio = (item.get("municipio_donde_se_encuentra") or "").strip()
+            dpto      = (item.get("departamento_donde_se") or "").strip()
+            autoridad = (item.get("autoridad_ambiental_donde") or "").strip()
+            anno      = (item.get("a_o_a_o_de_registro") or "").strip()
+            rep       = (item.get("nombre_representante_del") or "").strip()
 
             if not nombre or nombre == "Sin nombre":
                 continue
 
-            desc = desc_raw or f"Negocio verde verificado. Categoria: {categoria}"
+            loc = f"{municipio}, {dpto}".strip(", ") or "Bogota Region"
+
+            desc = desc_raw[:240] if desc_raw else (
+                f"Negocio verde verificado por {autoridad}. "
+                f"Categoria: {categoria}. Producto: {producto}."
+            )
+
+            detail = (
+                f"{desc_raw} "
+                f"Sector: {sector}. Subsector: {subsector}. "
+                f"Producto principal: {producto}. "
+                f"Autoridad ambiental: {autoridad}. "
+                f"Representante: {rep}."
+            ).strip()
 
             results.append(make_record(
                 title=nombre,
                 actor=nombre,
                 source=SOURCE,
                 desc=desc,
-                detail=f"{desc_raw} Contacto: {contacto}".strip(),
+                detail=detail,
                 loc=loc,
+                anno=anno or None,
                 url="https://www.negociosverdes.gov.co",
             ))
 
     except Exception as e:
-        log.error(f"[NegociosVerdes API] Error: {e}")
+        log.error(f"[NegociosVerdes] Error: {e}")
 
-    log.info(f"[NegociosVerdes API] {len(results)} registros procesados")
+    log.info(f"[NegociosVerdes] {len(results)} registros procesados")
     return results
 
 
-# FUENTE 3 - ECMARKETPLACE (Playwright - JS rendering)
-# FUENTE 4 - ECODIRECTORIO SDA (Playwright - Google Sites)
-# Ambas usan Playwright, se procesan juntas para abrir el browser una sola vez
+# FUENTE 3 + 4 - ECMARKETPLACE y ECODIRECTORIO SDA (Playwright)
 
 def scrape_con_playwright():
     results_ecmarket = []
@@ -296,7 +323,7 @@ def scrape_con_playwright():
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        log.warning("[Playwright] No instalado. Skipping ECMarketplace y Ecodirectorio.")
+        log.warning("[Playwright] No instalado. Skipping.")
         return [], []
 
     try:
@@ -306,7 +333,7 @@ def scrape_con_playwright():
                 args=["--no-sandbox", "--disable-dev-shm-usage"]
             )
 
-            # ── ECMarketplace ──────────────────────────────────────────
+            # ECMarketplace
             SOURCE_EC = "ECMarketplace Latam"
             BASE_EC   = "https://ecmarketplacelatam.com"
             try:
@@ -319,37 +346,40 @@ def scrape_con_playwright():
                 )
                 page.wait_for_timeout(4000)
 
-                # Intentar hacer clic en "Buscar" para cargar todos los productos
                 try:
-                    page.click("button:has-text('Buscar'), input[value='Buscar']",
-                               timeout=3000)
+                    page.click(
+                        "button:has-text('Buscar'), input[value='Buscar']",
+                        timeout=3000
+                    )
                     page.wait_for_timeout(3000)
                 except Exception:
                     pass
 
-                # Extraer todas las tarjetas de productos visibles
                 cards = page.query_selector_all(
                     ".card, .producto-card, .item-producto, "
-                    "[class*='producto'], [class*='oferta'], "
-                    "[class*='card']"
+                    "[class*='producto'], [class*='oferta'], [class*='card']"
                 )
                 log.info(f"[ECMarketplace] {len(cards)} tarjetas encontradas")
 
                 seen = set()
                 for card in cards[:100]:
                     try:
-                        title = (
-                            card.query_selector("h2, h3, h4, .titulo, .nombre, strong")
+                        title_el = card.query_selector(
+                            "h2, h3, h4, .titulo, .nombre, strong"
                         )
-                        desc_el = card.query_selector("p, .descripcion, .description")
-                        link_el = card.query_selector("a[href]")
+                        desc_el  = card.query_selector(
+                            "p, .descripcion, .description"
+                        )
+                        link_el  = card.query_selector("a[href]")
 
-                        title_text = title.inner_text().strip() if title else ""
+                        title_text = title_el.inner_text().strip() if title_el else ""
                         if not title_text or title_text in seen:
                             continue
                         seen.add(title_text)
 
-                        desc_text = desc_el.inner_text().strip() if desc_el else ""
+                        desc_text = (
+                            desc_el.inner_text().strip() if desc_el else ""
+                        )
                         href = link_el.get_attribute("href") if link_el else ""
                         if href and not href.startswith("http"):
                             href = BASE_EC + href
@@ -364,7 +394,6 @@ def scrape_con_playwright():
                     except Exception:
                         continue
 
-                # Si no encontramos tarjetas, intentar extraer el HTML completo
                 if not results_ecmarket:
                     html = page.content()
                     soup = BeautifulSoup(html, "lxml")
@@ -381,24 +410,25 @@ def scrape_con_playwright():
                 log.info(f"[ECMarketplace] {len(results_ecmarket)} registros")
 
             except Exception as e:
-                log.error(f"[ECMarketplace] Error Playwright: {e}")
+                log.error(f"[ECMarketplace] Error: {e}")
 
-            # ── Ecodirectorio SDA ──────────────────────────────────────
+            # Ecodirectorio SDA
             SOURCE_SDA = "Ecodirectorio SDA"
-            URL_SDA    = "https://sites.google.com/ambientebogota.gov.co/ecodirectorio-2023/inicio"
+            URL_SDA = (
+                "https://sites.google.com/ambientebogota.gov.co"
+                "/ecodirectorio-2023/inicio"
+            )
             try:
                 log.info("[Ecodirectorio SDA] Cargando con Playwright...")
                 page = browser.new_page()
                 page.goto(URL_SDA, wait_until="networkidle", timeout=45000)
                 page.wait_for_timeout(4000)
 
-                # Google Sites: buscar todos los links internos del sitio
                 all_links = page.eval_on_selector_all(
                     "a[href]",
                     "els => els.map(e => e.href)"
                 )
 
-                # Filtrar links que sean del mismo Google Site y no sean el inicio
                 company_urls = list({
                     link for link in all_links
                     if "ecodirectorio-2023" in link
@@ -406,7 +436,9 @@ def scrape_con_playwright():
                     and link.startswith("https://sites.google.com")
                 })[:35]
 
-                log.info(f"[Ecodirectorio SDA] {len(company_urls)} perfiles encontrados")
+                log.info(
+                    f"[Ecodirectorio SDA] {len(company_urls)} perfiles encontrados"
+                )
 
                 for company_url in company_urls:
                     try:
@@ -423,8 +455,6 @@ def scrape_con_playwright():
                             "", title
                         ).strip()
 
-                        # Google Sites: el contenido esta en divs con role="main"
-                        # o en .tyJCtd (clase interna de Google Sites)
                         body_text = ""
                         for selector in [
                             "[role='main']", ".tyJCtd", "article", "main"
@@ -448,13 +478,15 @@ def scrape_con_playwright():
                                 url=company_url,
                             ))
                     except Exception as e:
-                        log.debug(f"[Ecodirectorio SDA] Error en {company_url}: {e}")
+                        log.debug(
+                            f"[Ecodirectorio SDA] Error en {company_url}: {e}"
+                        )
 
                 page.close()
                 log.info(f"[Ecodirectorio SDA] {len(results_ecdir)} registros")
 
             except Exception as e:
-                log.error(f"[Ecodirectorio SDA] Error Playwright: {e}")
+                log.error(f"[Ecodirectorio SDA] Error: {e}")
 
             browser.close()
 
@@ -498,7 +530,7 @@ def deduplicate(records):
 
 def main():
     log.info("=" * 55)
-    log.info("BRC Metabuscador v2 - Inicio de scraping")
+    log.info("BRC Metabuscador v3 - Inicio de scraping")
     log.info(f"Hora UTC: {TODAY}")
     log.info("=" * 55)
 
@@ -522,7 +554,7 @@ def main():
     )
 
     log.info("=" * 55)
-    log.info(f"data.json -> {len(all_records)} registros")
+    log.info(f"data.json -> {len(all_records)} registros totales")
     sources = {r["source"] for r in all_records}
     for s in sorted(sources):
         count = sum(1 for r in all_records if r["source"] == s)
