@@ -11,7 +11,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -25,7 +25,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -39,7 +39,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -53,35 +53,21 @@
     "detail": "¡Decora con estilo, cuida el planeta y guarda tus mejores recuerdos! Nuestros porta retratos ecológicos están hechos...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "tecnologia",
-    "sector": "residuos",
-    "estrategia": "Valorizacion y cierre",
-    "title": "Abrigo Day",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/moda-mujer/72232-abrigo-upcycling-textile.html",
-    "desc": "El Cañón del Güejar, ubicado en Lejanías, Meta, es un destino paradisíaco que ofrece una experiencia inolvidable para los...",
-    "detail": "El Cañón del Güejar, ubicado en Lejanías, Meta, es un destino paradisíaco que ofrece una experiencia inolvidable para los...",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "tecnologia",
+    "tipo": "bien",
     "sector": "textil",
     "estrategia": "Diseno circular",
     "title": "Abrigo Sostenible",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/moda-mujer/72146-abrigo-sostenible.html",
-    "desc": "Descubre la combinación de elegancia y sostenibilidad con nuestra billetera de cuero vacuno. Ideal para quienes buscan estilo, calidad y...",
-    "detail": "Descubre la combinación de elegancia y sostenibilidad con nuestra billetera de cuero vacuno. Ideal para quienes buscan estilo, calidad y...",
+    "desc": "Descripción Camisa polo sostenible con fibra de algodón recuperado slim fit. Tejido de punto. Diseño de canalé. Cuello polo acabado en...",
+    "detail": "Descripción Camisa polo sostenible con fibra de algodón recuperado slim fit. Tejido de punto. Diseño de canalé. Cuello polo acabado en...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -95,7 +81,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -109,7 +95,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -123,7 +109,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -137,7 +123,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -151,7 +137,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -165,21 +151,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "servicio",
+    "tipo": "tecnologia",
     "sector": "residuos",
     "estrategia": "Valorizacion y cierre",
-    "title": "Aretes \"Brote\"",
+    "title": "Aretes en acero inoxidable...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/accesorios-joyeria-y-bisuteria/79449-aretes-brote.html",
-    "desc": "Canasto con tapa hecho a mano en cordón de algodón. Ideal para organizar diferente elementos del hogar u oficina y mantener el orden de los...",
-    "detail": "Canasto con tapa hecho a mano en cordón de algodón. Ideal para organizar diferente elementos del hogar u oficina y mantener el orden de los...",
+    "url": "https://www.bazzarbog.com/accesorios-joyeria-y-bisuteria/60329-aretes-en-acero-inoxidable-con-forma-de-corona-de-laurel.html",
+    "desc": "El Cañón del Güejar, ubicado en Lejanías, Meta, es un destino paradisíaco que ofrece una experiencia inolvidable para los...",
+    "detail": "El Cañón del Güejar, ubicado en Lejanías, Meta, es un destino paradisíaco que ofrece una experiencia inolvidable para los...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -193,7 +179,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -207,7 +193,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -221,21 +207,35 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
     "sector": "residuos",
     "estrategia": "Diseno circular",
-    "title": "Aros Ecológicos Girasol...",
+    "title": "BOLSAS PARA HALLOWEEN",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/artesanias-y-tradicion/86435-aros-ecologicos-girasol-mama-pancha-artesanias.html",
-    "desc": "Producto sostenible: Aros Ecológicos Girasol.... $ 30.000",
+    "url": "https://www.bazzarbog.com/empaques/69983-bolsas-para-halloween.html",
+    "desc": "Producto sostenible: BOLSAS PARA HALLOWEEN. $ 17.000",
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "servicio",
+    "sector": "textil",
+    "estrategia": "Diseno circular",
+    "title": "BOLSO LAYLA (Cuero Vegetal)",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/bolsos-y-carteras/66476-bolso-layla-cuero-vegetal.html",
+    "desc": "El Bolso Bahía es la máxima expresión de amplitud y estilo sostenible. Con un diseño que combina funcionalidad y sofisticación, te conecta con la...",
+    "detail": "El Bolso Bahía es la máxima expresión de amplitud y estilo sostenible. Con un diseño que combina funcionalidad y sofisticación, te conecta con la...",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -249,7 +249,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -263,7 +263,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -277,7 +277,7 @@
     "detail": "Portadocumentos en Cuero: Elegancia y Versatilidad Nuestro portadocumentos en cuero es la combinación perfecta de funcionalidad y estilo....",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -291,7 +291,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -305,7 +305,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -319,7 +319,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -333,7 +333,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -343,11 +343,11 @@
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/bolsos-y-carteras/75935-bolso-bahia.html",
-    "desc": "Cuero sostenible (Libre de cromo), suela de caucho y cierre con velcro",
-    "detail": "Cuero sostenible (Libre de cromo), suela de caucho y cierre con velcro",
+    "desc": "Monedero Bulldog: Arte y Sostenibilidad \"Monedero de diseño exclusivo con motivo de bulldog. Fabricado a mano con cuero sostenible,...",
+    "detail": "Monedero Bulldog: Arte y Sostenibilidad \"Monedero de diseño exclusivo con motivo de bulldog. Fabricado a mano con cuero sostenible,...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -356,26 +356,26 @@
     "title": "Bolígrafo tinta de papel...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/inicio/80392-boligrafo-tinta-de-papel-germinable-grun-unidad.html",
-    "desc": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
-    "detail": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
+    "url": "https://www.bazzarbog.com/inicio/80372-boligrafo-tinta-de-papel-grun-unidad.html",
+    "desc": "Fabricado con papel revista recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
+    "detail": "Fabricado con papel revista recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "servicio",
+    "tipo": "tecnologia",
     "sector": "residuos",
     "estrategia": "Diseno circular",
     "title": "Box cocina sostenible",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/hogar/51369-box-cocina-sostenible.html",
-    "desc": "Chaqueta sostenible",
-    "detail": "Chaqueta sostenible",
+    "desc": "En Lenrop diseñamos ,Chaquetas oversize unisex estilo único elaborada con materiales reutilizados y modulados a partir de camisas deportivas con...",
+    "detail": "En Lenrop diseñamos ,Chaquetas oversize unisex estilo único elaborada con materiales reutilizados y modulados a partir de camisas deportivas con...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -389,7 +389,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -403,7 +403,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -417,7 +417,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -431,7 +431,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -445,7 +445,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -459,7 +459,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -473,7 +473,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "bien",
+    "sector": "residuos",
+    "estrategia": "Diseno circular",
+    "title": "CHIP`S DE PLATANO VERDE",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/snacks/73650-chips-de-platano-verde.html",
+    "desc": "Producto sostenible: CHIP`S DE PLATANO VERDE. $ 3.800",
+    "detail": "",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -487,7 +501,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -501,7 +515,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -515,7 +529,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -529,7 +543,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -543,7 +557,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -557,7 +571,7 @@
     "detail": "Practico tamaño Cuaderno ecológico con el tamaño ideal para llevar a cualquier parte con carátula envolvente y una banda elástica a manera de...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -571,7 +585,7 @@
     "detail": "Punto Ecológico de 120 litros de 3 puestos con estructura metálica y canecas con tapa cúpula reglamentario",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -585,21 +599,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "tecnologia",
+    "tipo": "servicio",
     "sector": "residuos",
     "estrategia": "Diseno circular",
     "title": "Camisa polo sostenible ren",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/tops-y-camisetas/71379-camisa-polo-sostenible-ren.html",
-    "desc": "En Lenrop diseñamos ,Chaquetas oversize unisex estilo único elaborada con materiales reutilizados y modulados a partir de camisas deportivas con...",
-    "detail": "En Lenrop diseñamos ,Chaquetas oversize unisex estilo único elaborada con materiales reutilizados y modulados a partir de camisas deportivas con...",
+    "desc": "¡Un nuevo kit llega para transformar tu cocina en un lugar más sostenible!",
+    "detail": "¡Un nuevo kit llega para transformar tu cocina en un lugar más sostenible!",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -613,7 +627,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -627,21 +641,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "servicio",
-    "sector": "residuos",
+    "tipo": "tecnologia",
+    "sector": "textil",
     "estrategia": "Diseno circular",
     "title": "Camiseta sostenible Sumapaz",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/camisetas/71378-camiseta-sostenible-sumapaz.html",
-    "desc": "¡Un nuevo kit llega para transformar tu cocina en un lugar más sostenible!",
-    "detail": "¡Un nuevo kit llega para transformar tu cocina en un lugar más sostenible!",
+    "desc": "Descubre la combinación de elegancia y sostenibilidad con nuestra billetera de cuero vacuno. Ideal para quienes buscan estilo, calidad y...",
+    "detail": "Descubre la combinación de elegancia y sostenibilidad con nuestra billetera de cuero vacuno. Ideal para quienes buscan estilo, calidad y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -655,7 +669,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -669,21 +683,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "servicio",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Canasto macramé",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/artesanias-y-tradicion/56461-canasto-macrame.html",
-    "desc": "El Bolso Bahía es la máxima expresión de amplitud y estilo sostenible. Con un diseño que combina funcionalidad y sofisticación, te conecta con la...",
-    "detail": "El Bolso Bahía es la máxima expresión de amplitud y estilo sostenible. Con un diseño que combina funcionalidad y sofisticación, te conecta con la...",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -697,7 +697,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -711,7 +711,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -725,7 +725,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -739,7 +739,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -753,7 +753,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -767,7 +767,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -781,7 +781,7 @@
     "detail": "Añade un toque de sofisticación y estilo a tu hogar con nuestra Bandeja Doble Faz de Cuero Exótico . Estas elegantes...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -795,21 +795,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "servicio",
-    "sector": "residuos",
-    "estrategia": "Valorizacion y cierre",
-    "title": "Chaqueta Geometric Eco",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/inicio/80824-chaqueta-geometric-eco.html",
-    "desc": "Descripción Chaleco con diseño entallado. Cuello pico. Sin mangas. Tirantes anchos. Dos bolsillos de ribete en la parte delantera.Cierre...",
-    "detail": "Descripción Chaleco con diseño entallado. Cuello pico. Sin mangas. Tirantes anchos. Dos bolsillos de ribete en la parte delantera.Cierre...",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -823,7 +809,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -837,7 +823,7 @@
     "detail": "SmartLine comercializa desengrasante ecológico para uso industrial. Esta diseñado para remover aceites y grasas pesada de cualquier industria....",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -846,40 +832,40 @@
     "title": "Chaqueta impermeable chami...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/ninos/45006-chaqueta-impermeable-chami-plus-verde.html",
+    "url": "https://www.bazzarbog.com/58020-chaqueta-impermeable-chami-pro-verde.html",
     "desc": "Producto sostenible: Chaqueta impermeable chami.... $ 210.000",
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "tecnologia",
-    "sector": "agua",
+    "tipo": "servicio",
+    "sector": "residuos",
     "estrategia": "Diseno circular",
     "title": "Chaqueta sostenible Unisex",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/chaquetas/81130-chaqueta-sostenible-unisex.html",
-    "desc": "Maceta sostenible elaborada con materiales eco-amigables, hogar de la peperomia Velita de fácil cuidado, necesita luz indirecta y riego...",
-    "detail": "Maceta sostenible elaborada con materiales eco-amigables, hogar de la peperomia Velita de fácil cuidado, necesita luz indirecta y riego...",
+    "desc": "Chaqueta sostenible",
+    "detail": "Chaqueta sostenible",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "bien",
-    "sector": "textil",
+    "tipo": "tecnologia",
+    "sector": "agua",
     "estrategia": "Diseno circular",
     "title": "Chaqueta sostenible montaña",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/chaqueta/74901-chaqueta-montana.html",
-    "desc": "Descripción Camisa polo sostenible con fibra de algodón recuperado slim fit. Tejido de punto. Diseño de canalé. Cuello polo acabado en...",
-    "detail": "Descripción Camisa polo sostenible con fibra de algodón recuperado slim fit. Tejido de punto. Diseño de canalé. Cuello polo acabado en...",
+    "desc": "Maceta sostenible elaborada con materiales eco-amigables, hogar de la peperomia Velita de fácil cuidado, necesita luz indirecta y riego...",
+    "detail": "Maceta sostenible elaborada con materiales eco-amigables, hogar de la peperomia Velita de fácil cuidado, necesita luz indirecta y riego...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -893,7 +879,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "tecnologia",
+    "sector": "textil",
+    "estrategia": "Valorizacion y cierre",
+    "title": "Collar Amatista Laúd",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/collares-bisuteria/80129-collar-amatista-laud.html",
+    "desc": "Cuadro macrame, realizado con los hilos que sobran al hacer todas las manualidades. ・hecho a mano ・material: algodon reciclado ・son piezas unicas",
+    "detail": "Cuadro macrame, realizado con los hilos que sobran al hacer todas las manualidades. ・hecho a mano ・material: algodon reciclado ・son piezas unicas",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -907,7 +907,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -921,21 +921,35 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
     "sector": "residuos",
     "estrategia": "Diseno circular",
-    "title": "Collar corazón anatomico 3d",
+    "title": "Collar cáscara de huevo",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/collares-joyeria/66112-collar-corazon-anatomico-3d.html",
-    "desc": "Producto sostenible: Collar corazón anatomico 3d. $ 70.000",
+    "url": "https://www.bazzarbog.com/collares-joyeria/22359-collar-cascara-de-huevo.html",
+    "desc": "Producto sostenible: Collar cáscara de huevo. $ 90.000",
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "bien",
+    "sector": "residuos",
+    "estrategia": "Diseno circular",
+    "title": "Combo superpoderoso miel de...",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/salud-y-belleza/64509-combo-superpoderoso-miel-de-abejas-polen-propoleo-100-puro-natural-y-organico-diferentes-presentaciones.html",
+    "desc": "Producto sostenible: Combo superpoderoso miel de.... $ 55.000",
+    "detail": "",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -949,7 +963,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -963,7 +977,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -977,7 +991,7 @@
     "detail": "Calendario de escritorio ecológico – mini numérico con el tamaño ideal Mini calendario ecológico mensual de escritorio con un tamaño ideal y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -991,7 +1005,7 @@
     "detail": "Llaveros en forma de letras en macrame, lleva tu inicial a todos los lugares. ・hechos a mano ・material: 100% algodon y algodon reciclado...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1005,7 +1019,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1019,7 +1033,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1033,7 +1047,7 @@
     "detail": "Esta libreta ecológica combina la calidez de una carátula de madera natural. Su encuadernación con anillado doble O facilita...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1047,7 +1061,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1061,7 +1075,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1075,7 +1089,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1089,35 +1103,21 @@
     "detail": "Mugs con mensaje ecológico donde una imagen habla más que mil palabras.",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
-    "sector": "residuos",
+    "sector": "construccion",
     "estrategia": "Valorizacion y cierre",
     "title": "Docena de Bolígrafos Gel de...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/inicio/80375-docena-de-boligrafos-gel-de-colores-papel-grun.html",
-    "desc": "Tapices ・hechos a mano ・material: 100% algodon y algodon reciclado ・disponible en diferentes colores ・tenemos diferentes diseños disponibles",
-    "detail": "Tapices ・hechos a mano ・material: 100% algodon y algodon reciclado ・disponible en diferentes colores ・tenemos diferentes diseños disponibles",
+    "desc": "Tapiz con bolitas de madera Hecho a mano Con piola de algodón reciclado Especial para cualquier espacio que le quieras dar un estilo boho.",
+    "detail": "Tapiz con bolitas de madera Hecho a mano Con piola de algodón reciclado Especial para cualquier espacio que le quieras dar un estilo boho.",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "tecnologia",
-    "sector": "residuos",
-    "estrategia": "Valorizacion y cierre",
-    "title": "Docena de Colores de papel...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/utiles/79920-colores-de-papel-germinable-grun-docena.html",
-    "desc": "Fabricado con papel revista recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
-    "detail": "Fabricado con papel revista recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -1126,12 +1126,12 @@
     "title": "Docena de Lápices de papel...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/inicio/80370-docena-de-lapices-de-papel-grun.html",
-    "desc": "Cuadro macrame, realizado con los hilos que sobran al hacer todas las manualidades. ・hecho a mano ・material: algodon reciclado ・son piezas unicas",
-    "detail": "Cuadro macrame, realizado con los hilos que sobran al hacer todas las manualidades. ・hecho a mano ・material: algodon reciclado ・son piezas unicas",
+    "url": "https://www.bazzarbog.com/utiles/79919-lapiz-de-papel-germinable-grun-docena.html",
+    "desc": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
+    "detail": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1145,7 +1145,7 @@
     "detail": "pesebre hecho con reciclaje",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -1155,11 +1155,11 @@
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/hogar-y-decoracion/79780-ecoluz-vela-sostenible.html",
-    "desc": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
-    "detail": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único.",
+    "desc": "Tapices ・hechos a mano ・material: 100% algodon y algodon reciclado ・disponible en diferentes colores ・tenemos diferentes diseños disponibles",
+    "detail": "Tapices ・hechos a mano ・material: 100% algodon y algodon reciclado ・disponible en diferentes colores ・tenemos diferentes diseños disponibles",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1168,12 +1168,12 @@
     "title": "EcoMacArena de Maíz 4 kg -...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/mascotas/81858-ecomacarena-de-maiz-4-kg-limon.html",
+    "url": "https://www.bazzarbog.com/mascotas/81856-ecomacarena-de-maiz-4-kg-sandia.html",
     "desc": "Producto sostenible: EcoMacArena de Maíz 4 kg -.... $ 32.000",
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1187,7 +1187,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1201,7 +1201,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1215,7 +1215,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1229,7 +1229,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1243,7 +1243,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1257,7 +1257,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1271,7 +1271,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1285,7 +1285,7 @@
     "detail": "Camiseta básica unisex - es 100% algodón entonces debes tener en cuenta que se puede encoger un poco si se lava con agua caliente o si se usa la...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1299,21 +1299,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "bien",
-    "sector": "textil",
-    "estrategia": "Diseno circular",
-    "title": "KIit de Limpieza textiles y...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/aseo/71963-kiit-de-limpieza-para-zapatos.html",
-    "desc": "Producto sostenible: KIit de Limpieza textiles y.... $ 65.000",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1327,7 +1313,7 @@
     "detail": "Nuestra línea de prendas de vestir es un homenaje a la creatividad y la transformación. Embellecemos y damos nueva vida a prendas,...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1341,7 +1327,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1355,21 +1341,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "bien",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Lampara t5 led 18w 120cm...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/electricidad/65455-lampara-t5-led-18w-120cm-luz-verde.html",
-    "desc": "Producto sostenible: Lampara t5 led 18w 120cm.... $ 15.300",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1383,7 +1355,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -1397,7 +1369,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1411,7 +1383,7 @@
     "detail": "Capellada: 90% cuero libre de cromo – 10% textil reciclado Forro: 100% textil – algodón Suela: caucho natural con mezcla de...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1425,7 +1397,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -1439,7 +1411,7 @@
     "detail": "Portavasos realizados en tecnica de cesteria, ・hechos a mano ・material: 100% algodon reciclado ・disponible en diferentes colores ・se venden por...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1453,7 +1425,7 @@
     "detail": "Matera 40cm color Blanco Elaborada en plástico 100% Reciclado. Dimensiones: 40cm x 29cm x 29cm Matera Ahorradora de Agua. Uso Interior y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1467,7 +1439,7 @@
     "detail": "Matera 40cm color Negro Elaborada en plástico 100% Reciclado. Dimensiones: 40cm x 29cm x 29cm Matera Ahorradora de Agua. Uso Interior y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1481,7 +1453,7 @@
     "detail": "Matera small color Magenta Elaborada en plástico 100% Reciclado. Dimensiones: 12cm x 10cm x 10cm Matera Ahorradora de Agua. Uso Interior y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1491,11 +1463,11 @@
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/hogar/57671-matera-blanco-hueso-mini-elaborada-en-plastico-100-reciclado.html",
-    "desc": "Cuadro decorativo hecho a mano 100 % personalizable elaborado en diversas técnicas de papel. ¡sorprende a mamá con un regalo hecho a mano lleno de...",
-    "detail": "Cuadro decorativo hecho a mano 100 % personalizable elaborado en diversas técnicas de papel. ¡sorprende a mamá con un regalo hecho a mano lleno de...",
+    "desc": "Este mueble te ayuda a organizar espacios para disfrutar de momentos de esparcimiento en casa. En la sala, en la habitación, en el estudio, en el...",
+    "detail": "Este mueble te ayuda a organizar espacios para disfrutar de momentos de esparcimiento en casa. En la sala, en la habitación, en el estudio, en el...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1509,7 +1481,7 @@
     "detail": "Matera small color Verde Elaborada en plástico 100% Reciclado. Dimensiones: 12cm x 10cm x 10cm Matera Ahorradora de Agua. Uso Interior y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1523,7 +1495,7 @@
     "detail": "Matera small color Blanco Elaborada en plástico 100% Reciclado. Dimensiones: 12cm x 10cm x 10cm Matera Ahorradora de Agua. Uso Interior y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1537,7 +1509,7 @@
     "detail": "Matera mini color Blanco hueso Elaborada en plástico 100% Reciclado. Dimensiones: 8cm x 8cm Matera Ahorradora de Agua. Uso Interior y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1551,7 +1523,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1560,12 +1532,12 @@
     "title": "Mochila  bolsa tejida...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/artesanias-y-tradicion/55008-mochila-bolsa-tejida-expandible-reutilizable-ecologica-crochet-azul.html",
+    "url": "https://www.bazzarbog.com/bolsos-y-carteras/55010-mochila-bolsa-tejida-expandible-reutilizable-ecologica-crochet-rosada.html",
     "desc": "Producto sostenible: Mochila  bolsa tejida.... $ 60.000",
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1579,7 +1551,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "bien",
+    "sector": "textil",
+    "estrategia": "Valorizacion y cierre",
+    "title": "Monedero Bulldog: Arte y...",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/bolsos-y-carteras/73158-monedero-bulldog-arte-y-sostenibilidad.html",
+    "desc": "Elimina el maquillaje, la grasa y la suciedad de forma suave y eficaz con nuestras toallitas desmaquillantes naturales , hechas de fibra de...",
+    "detail": "Elimina el maquillaje, la grasa y la suciedad de forma suave y eficaz con nuestras toallitas desmaquillantes naturales , hechas de fibra de...",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1593,7 +1579,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1607,35 +1593,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "bien",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Mug 400 ml ecológico  negro...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/cocina/54711-mug-400-ml-ecologico-negro-wifi-en-fibra-de-bambu-con-tapa-antiderrames.html",
-    "desc": "Producto sostenible: Mug 400 ml ecológico  negro.... $ 44.000",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "bien",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Mug 400 ml ecológico  pino...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/hogar/54710-mug-400-ml-ecologico-pino-cafe-en-fibra-de-bambu-con-tapa-antiderrames.html",
-    "desc": "Producto sostenible: Mug 400 ml ecológico  pino.... $ 44.000",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1649,7 +1607,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1663,21 +1621,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "bien",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Mug 450 ml ecológico  café...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/hogar/54709-mug-450-ml-ecologico-cafe-peru-en-fibra-de-bambu-con-tapa-antiderrames.html",
-    "desc": "Producto sostenible: Mug 450 ml ecológico  café.... $ 44.000",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1691,7 +1635,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1705,7 +1649,7 @@
     "detail": "PUNTO ECOLÓGICO REGLAMENTARIO CON BASE METÁLICA DE TRES PUESTOS DE 21 LITROS NORMA 2021",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1719,7 +1663,7 @@
     "detail": "PUNTO ECOLÓGICO REGLAMENTARIO CON ESTRUCTURA METÁLICA DE TRES PUESTOS CON CANECAS DE 30 LITROS TAPA VAIVÉN",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1733,7 +1677,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1747,7 +1691,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1761,7 +1705,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1775,7 +1719,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1789,7 +1733,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1803,7 +1747,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1817,7 +1761,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -1831,7 +1775,7 @@
     "detail": "¿Quieres sumarte a una mayor conciencia preservando el ámbito ecológico en el cuidado de nuestro planeta?: un ejemplo de esto es el Pocillo...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1845,21 +1789,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
-    "tipo": "tecnologia",
+    "tipo": "servicio",
     "sector": "textil",
     "estrategia": "Valorizacion y cierre",
     "title": "Portadocumentos de Cuero...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/otros-complementos/67627-portadocumentos-de-cuero-vacuno-diseno-minimalista-y-sostenible.html",
-    "desc": "Añade un toque de magia y sostenibilidad a tu día a día con nuestro Frailejónito Guardián de Tesoros . Este...",
-    "detail": "Añade un toque de magia y sostenibilidad a tu día a día con nuestro Frailejónito Guardián de Tesoros . Este...",
+    "desc": "Descripción Chaleco con diseño entallado. Cuello pico. Sin mangas. Tirantes anchos. Dos bolsillos de ribete en la parte delantera.Cierre...",
+    "detail": "Descripción Chaleco con diseño entallado. Cuello pico. Sin mangas. Tirantes anchos. Dos bolsillos de ribete en la parte delantera.Cierre...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -1869,25 +1813,11 @@
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/hogar/57515-portavasos-cesteria.html",
-    "desc": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único +...",
-    "detail": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único +...",
+    "desc": "Vela en vaso reciclado con empaque ecológico de maíz y cera de soya aromática, con código QR donde podrás dejar un mensaje de voz para aquella...",
+    "detail": "Vela en vaso reciclado con empaque ecológico de maíz y cera de soya aromática, con código QR donde podrás dejar un mensaje de voz para aquella...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "tecnologia",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Protectores diarios...",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/otros-cuidados-corporales/85717-protectores-diarios-reutilizables.html",
-    "desc": "Producto sostenible: Protectores diarios.... $ 15.000",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1901,21 +1831,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
     "sector": "residuos",
-    "estrategia": "Valorizacion y cierre",
+    "estrategia": "Diseno circular",
     "title": "Punto ecológico de 120...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/canecas-de-basura-papeleras/27185-punto-ecologico-de-120-litros-de-3-puestos-caneca-tapa-de-cupula.html",
-    "desc": "Descubre los increíbles aretes en acero inoxidable \"Brote\", diseñados con una hermosa forma de brote que simboliza la frescura y...",
-    "detail": "Descubre los increíbles aretes en acero inoxidable \"Brote\", diseñados con una hermosa forma de brote que simboliza la frescura y...",
+    "desc": "El Bolso Bahía es la máxima expresión de amplitud y estilo sostenible. Con un diseño que combina funcionalidad y sofisticación, te conecta con la...",
+    "detail": "El Bolso Bahía es la máxima expresión de amplitud y estilo sostenible. Con un diseño que combina funcionalidad y sofisticación, te conecta con la...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1929,7 +1859,7 @@
     "detail": "PUNTO ECOLÓGICO REGLAMENTARIO CON BASE METÁLICA DE TRES PUESTOS DE 55 LITROS NUEVA NORMA",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1943,7 +1873,7 @@
     "detail": "PUNTO ECOLÓGICO REGLAMENTARIO CON BASE METÁLICA DE CUATRO PUESTOS DE 21 LITROS (NUEVA NORMA VIGENTE) Un \"punto ecológico\" consiste en una zona...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1957,7 +1887,7 @@
     "detail": "El Punto Ecológico Reglamentario con Estructura Metálica es una solución práctica y eficiente para la gestión de residuos en espacios públicos y...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1971,7 +1901,7 @@
     "detail": "PUNTO ECOLÓGICO REGLAMENTARIO CON BASE METÁLICA DE TRES PUESTOS CON CANECAS DE 35 LITROS TAPA VAIVÉN",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -1985,7 +1915,7 @@
     "detail": "Calendario de escritorio ecológico para recuperar el equilibrio Las organizaciones deberán conectarse y comunicarse con los consumidores,...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -1999,7 +1929,7 @@
     "detail": "Punto ecológico apertura pedal de 20 litros de tres puestos para residuos",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -2013,7 +1943,7 @@
     "detail": "PUNTO ECOLÓGICO REGLAMENTARIO CON BASE METÁLICA DE CUATRO PUESTOS DE 14 LITROS Un \"punto ecológico\" consiste en una zona especial claramente...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2027,7 +1957,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2041,7 +1971,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2055,7 +1985,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2069,7 +1999,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "bien",
+    "sector": "residuos",
+    "estrategia": "Diseno circular",
+    "title": "S2 Disco Para Restregar",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/aseo/81822-s2-disco-para-restregar.html",
+    "desc": "Producto sostenible: S2 Disco Para Restregar. $ 45.000",
+    "detail": "",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2083,7 +2027,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2097,21 +2041,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "bien",
-    "sector": "residuos",
-    "estrategia": "Diseno circular",
-    "title": "Serum orgánico anti manchas",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/inicio/78549-serum-organico-anti-manchas.html",
-    "desc": "Producto sostenible: Serum orgánico anti manchas. $ 95.000",
-    "detail": "",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -2125,7 +2055,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2139,7 +2069,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2153,7 +2083,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2167,7 +2097,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2181,7 +2111,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "tecnologia",
+    "sector": "residuos",
+    "estrategia": "Diseno circular",
+    "title": "Shimex Exfoliante Facial x...",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/jabones/60247-shimex-exfoliante-facial-x-200-ml.html",
+    "desc": "Producto sostenible: Shimex Exfoliante Facial x.... $ 56.990",
+    "detail": "",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2195,7 +2139,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2209,7 +2153,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2223,7 +2167,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2237,7 +2181,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2251,7 +2195,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
@@ -2261,11 +2205,11 @@
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/hogar/59430-tapiz-en-macrame.html",
-    "desc": "Fabricado con papel revista recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único, capsula...",
-    "detail": "Fabricado con papel revista recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único, capsula...",
+    "desc": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único +...",
+    "detail": "Fabricado con papel periodico recuperado, etiqueta personalizable de papel blanco reciclado, alta resistencia, diseño único +...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2279,7 +2223,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2293,21 +2237,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
-  },
-  {
-    "tipo": "tecnologia",
-    "sector": "textil",
-    "estrategia": "Diseno circular",
-    "title": "Tenis cuero barefoot azul",
-    "actor": "BazzarBog CCB",
-    "source": "BazzarBog CCB",
-    "url": "https://www.bazzarbog.com/moda-infantil/70011-tenis-cuero-barefoot-azul.html",
-    "desc": "¡Apuesta por la moda sostenible y marca tendencia con nuestro Abrigo. Este abrigo no solo es elegante y distintivo, sino que también...",
-    "detail": "¡Apuesta por la moda sostenible y marca tendencia con nuestro Abrigo. Este abrigo no solo es elegante y distintivo, sino que también...",
-    "loc": "Bogota D.C.",
-    "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2321,7 +2251,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2335,7 +2265,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "tecnologia",
+    "sector": "residuos",
+    "estrategia": "Diseno circular",
+    "title": "Toallas Desmaquillantes...",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/otros-cuidados-faciales/78309-toallas-desmaquillantes-reutilizables-hooli.html",
+    "desc": "Aretes en acero inoxidable hipoalergenico , material sostenible, con forma de corona de laurel.",
+    "detail": "Aretes en acero inoxidable hipoalergenico , material sostenible, con forma de corona de laurel.",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2349,7 +2293,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2363,7 +2307,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2377,7 +2321,7 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2391,7 +2335,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
+  },
+  {
+    "tipo": "bien",
+    "sector": "residuos",
+    "estrategia": "Diseno circular",
+    "title": "Vela cera de abejas 10 cms",
+    "actor": "BazzarBog CCB",
+    "source": "BazzarBog CCB",
+    "url": "https://www.bazzarbog.com/aromatizantes/62195-vela-cera-de-abejas-10-cms.html",
+    "desc": "Producto sostenible: Vela cera de abejas 10 cms. $ 5.000",
+    "detail": "",
+    "loc": "Bogota D.C.",
+    "ano": "2026",
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "bien",
@@ -2405,21 +2363,21 @@
     "detail": "",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "tecnologia",
-    "sector": "textil",
-    "estrategia": "Diseno circular",
+    "sector": "residuos",
+    "estrategia": "Valorizacion y cierre",
     "title": "Vive la mejor experiencia...",
     "actor": "BazzarBog CCB",
     "source": "BazzarBog CCB",
     "url": "https://www.bazzarbog.com/viajes-turismo-y-experiencias/72674-vive-la-mejor-experiencia-en-el-canon-del-guejar.html",
-    "desc": "Chaqueta Unisex estampado exclusivo tela sostenible",
-    "detail": "Chaqueta Unisex estampado exclusivo tela sostenible",
+    "desc": "Añade un toque de magia y sostenibilidad a tu día a día con nuestro Frailejónito Guardián de Tesoros . Este...",
+    "detail": "Añade un toque de magia y sostenibilidad a tu día a día con nuestro Frailejónito Guardián de Tesoros . Este...",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   },
   {
     "tipo": "servicio",
@@ -2433,6 +2391,6 @@
     "detail": "Matera de 21 cm, en concreto sostenible y acabado tipo terrazo con vidrio reciclado",
     "loc": "Bogota D.C.",
     "ano": "2026",
-    "scraped_at": "2026-05-07T15:02:19.806029+00:00"
+    "scraped_at": "2026-05-07T19:23:11.477687+00:00"
   }
 ]
